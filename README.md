@@ -1,16 +1,21 @@
 # Start
 
-#### 1) bundle install
+#### 1) gems install
+    bundle install
 
-#### 2) yarn
-    yarn install
+#### 2) yarn install
+    yarn
 
-#### 3) rails db:migrate
+#### 3) apply migrations
+    rails db:migrate
 
-#### 4) rails db:seed
+#### 4) fixtures
+    rails db:seed
+
     default admin:
         email: admin@admin.com
         pass: 123456
     
-#### 5) bin/dev
-    start server
+#### 5) start server
+    bin/dev
+    
