@@ -1,0 +1,22 @@
+doctype html
+html[data-bs-theme="dark"]
+  head
+    title
+      | TestNews
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+  body
+    = render partial: 'layouts/alerts'
+    .d-flex.flex-column.align-items-end.me-5.p-5
+      = link_to "Главная", root_path
+      - if user_signed_in?
+        = link_to "Создать пост", new_news_post_path
+        = link_to "Профиль", edit_user_registration_path
+        = button_to "Выйти", destroy_user_session_path, method: :delete
+      - else
+        = link_to "Войти", new_user_session_path
+        = link_to "Регистрация", new_user_registration_path
+    = yield

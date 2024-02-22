@@ -1,0 +1,52 @@
+.d-flex.flex-column.align-items-center
+  h2
+    | Редактирование пользователя
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    br
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      div
+        | Currently waiting confirmation for: 
+        = resource.unconfirmed_email
+    .field
+      = f.label :password
+      i
+        | (оставьте пустым если не хотите изменять)
+      = f.password_field :password, autocomplete: "new-password"
+      - if @minimum_password_length
+        em
+          = @minimum_password_length
+          |  символов минимум
+    br
+    .field
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    br
+  
+    .field
+      | Рассылка
+      = f.label :send_news, "Еженедельная", value: User::SEND_NEWS_VALUES[:weekly]
+      = f.radio_button :send_news, User::SEND_NEWS_VALUES[:weekly]
+      = f.label :send_news, "Дневная", value: User::SEND_NEWS_VALUES[:daily]
+      = f.radio_button :send_news, User::SEND_NEWS_VALUES[:daily]
+      = f.label :send_news, "Отказаться", value: User::SEND_NEWS_VALUES[:none]
+      = f.radio_button :send_news, User::SEND_NEWS_VALUES[:none]
+    br
+    .field
+      = f.label :current_password
+      i
+        | (нам нужен ваш текущий пароль, чтобы подтвердить изменения)
+      = f.password_field :current_password, autocomplete: "current-password"
+    br
+    .actions
+      = f.submit "Обновить"
+  br
+  h3
+    | Удалить мой аккаунт
+  .d-flex.flex-column.align-items-center
+    = button_to "Удалить", registration_path(resource_name), data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены?" }, method: :delete
+  br
+  = link_to "Назад", :back

@@ -1,0 +1,4 @@
+div
+  - @content.to_a.each do |record|
+    p
+      = link_to record.title, news_post_url(record.id)

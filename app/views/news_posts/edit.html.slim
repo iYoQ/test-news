@@ -1,0 +1,9 @@
+.d-flex.flex-column.align-items-center
+  h1
+    | Редактирование
+  sub
+    | Осталось редакций: 
+    = @news_post.edit_count_left
+  br
+  = render partial: "form", locals: {news_post: @news_post}
+  = button_to "Удалить", @news_post, method: :delete, data: {turbo_confirm: "Вы уверены?"}

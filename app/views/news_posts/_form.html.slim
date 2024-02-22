@@ -1,0 +1,17 @@
+= form_with model: @news_post do |form|
+  - if form.object.errors.any?
+    div
+      - form.object.errors.full_messages.each do |message|
+        div
+          = message
+  .field
+    = form.label :title, 'Заголовок'
+    = form.text_field :title
+  br
+  .field
+    = form.label :body, 'Текст'
+    = form.text_area :body
+  br
+  .actions
+    = form.button 'Отправить'
+  br

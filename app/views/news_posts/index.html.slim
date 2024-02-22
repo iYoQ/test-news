@@ -1,0 +1,10 @@
+.d-flex.flex-column.align-items-center
+  h1
+    | Новости
+  - @news_posts.each do |news_post|
+    .container.border-bottom.border-2.d-flex.flex-column.align-items-center.w-50.my-4
+
+      h3.pb-3
+        = link_to news_post.title, news_post
+      = news_post.body
+        

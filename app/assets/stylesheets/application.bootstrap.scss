@@ -1,0 +1,47 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+
+$fade-white : #eee;
+$white : #ccc;
+
+a{
+  color: $fade-white;
+  text-decoration: none;
+
+  &:visited{
+    color: $white;
+    text-decoration: none;
+    opacity: 0.42;
+  }
+  &:hover{
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+  &:active{
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+@mixin d-flex($direction, $align) {
+  display: flex;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+.field {
+  @include d-flex(column, center);
+}
+
+.actions {
+  @include d-flex(column, center);
+}
+
+.alert:empty {
+  display: none;
+}
+
+.notice:empty {
+  display: none;
+}
