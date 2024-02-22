@@ -1,24 +1,16 @@
-# README
+# Start
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### 1) bundle install
 
-Things you may want to cover:
+#### 2) yarn
+    yarn install
 
-* Ruby version
+#### 3) rails db:migrate
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### 4) rails db:seed
+    default admin:
+        email: admin@admin.com
+        pass: 123456
+    
+#### 5) bin/dev
+    start server

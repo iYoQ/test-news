@@ -12,5 +12,5 @@ user = User.where(email: "admin@admin.com").first_or_initialize
 user.update!(password: "123456", password_confirmation: "123456")
 user.update_attribute :admin, true
 
-NewsPost.create(title: 'First post', body: '123', user_id: 1)
-NewsPost.create(title: 'Second post', body: '321', user_id: 1)
+NewsPost.create(title: 'First post', body: 'First', user_id: 1)
+NewsPost.create(title: 'Second post', body: 'Second', user_id: 1)
