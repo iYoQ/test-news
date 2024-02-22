@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :news_posts
 
   SEND_NEWS_VALUES = {weekly: 'weekly', daily: 'daily', none: 'none'}.freeze
 

@@ -1,4 +1,6 @@
 class NewsPost < ApplicationRecord
+  belongs_to :user
+
   before_update :update_edit_count
 
   validates :title, presence: true

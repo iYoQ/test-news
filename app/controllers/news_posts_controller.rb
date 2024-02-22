@@ -39,7 +39,6 @@ class NewsPostsController < ApplicationController
   end
 
   def show
-    @user = User.find(@news_post.user_id)
   end
 
   def edit
