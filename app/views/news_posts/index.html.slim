@@ -6,5 +6,5 @@
 
       h3.pb-3
         = link_to news_post.title, news_post
-      = news_post.body
+      = news_post.body.truncate(500)
         
