@@ -1,9 +1,10 @@
 .container.d-flex.flex-column.align-items-center
   - if current_user.try(:admin?)
     = link_to "Редактировать", edit_news_post_path(@news_post)
-  h2
-    = @news_post.title
-  p
-    | Автор: 
-    = @news_post.user.email
-  = @news_post.body
+  .text-break.d-flex.flex-column.align-items-center
+    h2
+      = @news_post.title
+    p
+      | Автор: 
+      = @news_post.user.email
+    = @news_post.body
