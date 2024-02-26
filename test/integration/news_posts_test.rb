@@ -29,7 +29,7 @@ class NewsPostsTest < ActionDispatch::IntegrationTest
     assert_select('h2', 'update')
 
     get('/news_posts/1/edit')
-    assert_select('sub', 'Edits left: 4')
+    assert_select('sub', 'Осталось редакций: 4')
   end
 
 end

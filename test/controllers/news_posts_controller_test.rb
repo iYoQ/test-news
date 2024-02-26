@@ -15,7 +15,7 @@ class NewsPostsControllerTest < ActionDispatch::IntegrationTest
     @news_post.reload
 
     assert_equal('updated', @news_post.title)
-    assert_equal('Update successfully', flash[:notice])
+    assert_equal('Обновленно', flash[:notice])
     assert_redirected_to(news_post_url(@news_post))
   end
 end
